@@ -363,7 +363,7 @@ function validateForm(data) {
         notaMedia < 0 ||
         notaMedia > 100
     ) {
-        return "Informe uma nota média entre 0 e 10.";
+        return "Informe uma nota média entre 0 e 100.";
     }
 
     if (getHours() !== 168) {
