@@ -361,7 +361,7 @@ function validateForm(data) {
     if (
         Number.isNaN(notaMedia) ||
         notaMedia < 0 ||
-        notaMedia > 10
+        notaMedia > 100
     ) {
         return "Informe uma nota média entre 0 e 10.";
     }
