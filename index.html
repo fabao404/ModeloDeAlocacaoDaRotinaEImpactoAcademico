@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARI • Pesquisa Acadêmica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <a class="brand" href="#">
+                <img class="ufjf-logo" src="imgs/Logo_temp.jpg" />
+                <!-- <span class="brand-mark">M</span> -->
+                <span>
+                    <strong>MARI</strong>
+                    <small>Modelo de Alocação da Rotina e Impacto acadêmico</small>
+                </span>
+            </a>
+            <div class="topbar-badge">Pesquisa • 168 horas</div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div>
+                    <span class="eyebrow">PESQUISA ACADÊMICA</span>
+                    <h1>Como você distribui suas <span>168 horas?</span></h1>
+                    <p>Registre sua rotina semanal e contribua para uma análise sobre a relação entre alocação do tempo
+                        e desempenho acadêmico.</p>
+                </div>
+                <div class="hero-stat">
+                    <strong>168</strong>
+                    <span>horas por semana</span>
+                </div>
+            </section>
+
+            <div id="messageArea" aria-live="polite"></div>
+
+            <section class="content-grid">
+                <form id="studentForm" class="card form-card">
+                    <div class="card-heading">
+                        <div>
+                            <span class="section-kicker">01 • ROTINA</span>
+                            <h2>Distribuição semanal</h2>
+                        </div>
+                        <span id="hoursStatus" class="hours-status">0 / 168 h</span>
+                    </div>
+
+                    <div class="hours-summary">
+                        <div class="summary-main">
+                            <span>Horas distribuídas</span>
+                            <strong><span id="totalHours">0</span><small> / 168 h</small></strong>
+                        </div>
+                        <div class="progress-track">
+                            <div id="progressBar" class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="range-grid">
+                        <div class="range-field">
+                            <div class="range-label">
+                                <label for="sono">Sono</label>
+                                <output id="sonoValue">56 h</output>
+                            </div>
+                            <input id="sono" name="sono" type="range" min="0" max="84" value="56">
+                            <div class="range-hint"><span>0 h</span><span>84 h</span></div>
+                        </div>
+
+                        <div class="range-field">
+                            <div class="range-label">
+                                <label for="estudo">Estudo</label>
+                                <output id="estudoValue">20 h</output>
+                            </div>
+                            <input id="estudo" name="estudo" type="range" min="0" max="60" value="20">
+                            <div class="range-hint"><span>0 h</span><span>60 h</span></div>
+                        </div>
+
+                        <div class="range-field">
+                            <div class="range-label">
+                                <label for="trabalho">Trabalho</label>
+                                <output id="trabalhoValue">0 h</output>
+                            </div>
+                            <input id="trabalho" name="trabalho" type="range" min="0" max="60" value="0">
+                            <div class="range-hint"><span>0 h</span><span>60 h</span></div>
+                        </div>
+
+                        <div class="range-field">
+                            <div class="range-label">
+                                <label for="lazer">Lazer</label>
+                                <output id="lazerValue">20 h</output>
+                            </div>
+                            <input id="lazer" name="lazer" type="range" min="0" max="60" value="20">
+                            <div class="range-hint"><span>0 h</span><span>60 h</span></div>
+                        </div>
+
+                        <div class="range-field">
+                            <div class="range-label">
+                                <label for="deslocamento">Deslocamento</label>
+                                <output id="deslocamentoValue">8 h</output>
+                            </div>
+                            <input id="deslocamento" name="deslocamento" type="range" min="0" max="40" value="8">
+                            <div class="range-hint"><span>0 h</span><span>40 h</span></div>
+                        </div>
+
+                        <div class="range-field">
+                            <div class="range-label">
+                                <label for="outros">Outros</label>
+                                <output id="outrosValue">64 h</output>
+                            </div>
+                            <input id="outros" name="outros" type="range" min="0" max="84" value="64">
+                            <div class="range-hint"><span>0 h</span><span>84 h</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card-heading secondary-heading">
+                        <div>
+                            <span class="section-kicker">02 • PERFIL</span>
+                            <h2>Dados acadêmicos</h2>
+                        </div>
+                    </div>
+
+                    <div class="field-grid">
+                        <!-- <div class="field">
+                            <label for="curso">Curso <span>*</span></label>
+                            <input id="curso" name="curso" type="text" placeholder="Ex.: Matemática" required>
+                        </div> -->
+
+                        <!-- <div class="field">
+                            <label for="instUFJF">Instituição <span>*</span></label>
+                            <select id="instUFJF" name="instUFJF" required>
+                                <option value="">Selecione</option>
+                                <option>UFJF</option>
+                                <option>IF Sudeste MG</option>
+                                <option>UNIPAC</option>
+                                <option>Estácio</option>
+                                <option>Doctum</option>
+                                <option>Outra</option>
+                            </select>
+                        </div> -->
+                        <div class="field">
+                            <label for="instUFJF">Instituição <span></span></label>
+                            <select id="instUFJF" name="instUFJF" disabled>
+                                <!-- <option value="">Selecione</option> -->
+                                <option>UFJF</option>
+                                <!-- <option>IF Sudeste MG</option>
+                                <option>UNIPAC</option>
+                                <option>Estácio</option>
+                                <option>Doctum</option>
+                                <option>Outra</option> -->
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="notaMedia">Nota média <span>*</span></label>
+                            <input id="notaMedia" name="notaMedia" type="number" min="0" max="100" step="1"
+                                placeholder="Ex.: 70" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="button primary" type="submit" id="saveButton">
+                            <span>Salvar pesquisa</span>
+                        </button>
+                        <button class="button secondary" type="button" id="resetButton">Limpar</button>
+                    </div>
+                </form>
+
+                <!-- <aside class="card search-card">
+                    <div class="card-heading">
+                        <div>
+                            <span class="section-kicker">03 • CONSULTA</span>
+                            <h2>Pesquisar dados</h2>
+                        </div>
+                    </div>
+
+                    <p class="card-description">Consulte os registros armazenados no Firebase e visualize os participantes de forma organizada.</p>
+
+                    <div class="field">
+                        <label for="searchCourse">Curso</label>
+                        <input id="searchCourse" type="text" placeholder="Ex.: Matemática">
+                    </div>
+
+                    <div class="field">
+                        <label for="searchInstitution">Instituição</label>
+                        <select id="searchInstitution">
+                            <option value="">Todas</option>
+                            <option>UFJF</option>
+                            <option>IF Sudeste MG</option>
+                            <option>UNIPAC</option>
+                            <option>Estácio</option>
+                            <option>Doctum</option>
+                            <option>Outra</option>
+                        </select>
+                    </div>
+
+                    <button class="button primary full" type="button" id="searchButton">Consultar</button>
+
+                    <div class="search-note">
+                        <span class="note-icon">i</span>
+                        <span>A consulta utiliza os registros disponíveis no caminho <strong>leads</strong> do Firebase.</span>
+                    </div>
+                </aside> -->
+            </section>
+
+            <!-- <section class="results-section">
+                <div class="results-heading">
+                    <div>
+                        <span class="section-kicker">RESULTADOS</span>
+                        <h2>Registros encontrados</h2>
+                    </div>
+                    <span id="resultCount" class="result-count">0 registros</span>
+                </div>
+                <div id="results" class="results-grid">
+                    <div class="empty-state">
+                        <div class="empty-icon">⌕</div>
+                        <h3>Nenhuma consulta realizada</h3>
+                        <p>Use os filtros acima para buscar os registros.</p>
+                    </div>
+                </div>
+            </section> -->
+        </main>
+
+        <footer>
+            <span>MARI • Pesquisa de alocação do tempo</span>
+            <span>168 horas semanais</span>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
